@@ -10,7 +10,7 @@ export function getStatusFromDays(days: number, currentStatus: GuaranteeStatus):
     return currentStatus;
   }
   if (days <= 0) return 'forfeited';
-  if (days <= 30) return 'expiring_soon';
+ if (days <= 30) return 'active';
   return 'active';
 }
 
