@@ -9,7 +9,7 @@ export default function SignupPage() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const router = useRouter()
-  const supabase = await createClient()
+  const supabase =  createClient()
 
   function update(field: string, val: string) {
     setForm(f => ({ ...f, [field]: val }))
