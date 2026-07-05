@@ -9,7 +9,8 @@ const BANKS = ['SBI', 'Bank of Baroda', 'Punjab National Bank', 'Canara Bank', '
 const STATUSES: GuaranteeStatus[] = ['active', 'renewed', 'released', 'forfeited']
 
 export default function EditGuaranteePage() {
-  const params = useParams()
+  // const params = useParams()
+  const params = useParams<{ id: string }>()
   const router = useRouter()
   const [guarantee, setGuarantee] = useState<Guarantee | null>(null)
   const [loading, setLoading] = useState(false)
