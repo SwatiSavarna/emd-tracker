@@ -17,7 +17,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const supabase = createAdminClient()
+  const supabase = await createAdminClient()
 
   // Get all active guarantees with company + user email info
   const { data: guarantees, error } = await supabase

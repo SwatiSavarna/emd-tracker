@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {
   const { userId, name, email, companyName, phone } = await request.json()
-  const supabase = createAdminClient()
+  const supabase =  await createAdminClient()
 
   // Create company first
   const { data: company, error: companyError } = await supabase
