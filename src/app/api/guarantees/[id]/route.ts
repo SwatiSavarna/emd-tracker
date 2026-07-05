@@ -12,7 +12,7 @@ const supabase = await createClient()
 
 export async function PATCH(request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
-  const supabase = createClient()
+  const supabase =  await createClient()
   const body = await request.json()
   const { error } = await supabase.from('guarantees').update(body).eq('id', id)
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
@@ -21,7 +21,7 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
 
 export async function DELETE(_: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
-  const supabase = createClient()
+  const supabase =  await createClient()
   const { error } = await supabase.from('guarantees').delete().eq('id', id)
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
   return NextResponse.json({ success: true })
